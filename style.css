@@ -1,0 +1,258 @@
+/*
+Theme Name: WP Devs - Real Madrid Edition
+Theme URI: https://website.com/wp-devs-real
+Author: Marcelo Vieira (modified for Real Madrid style)
+Description: Real Madrid themed learning theme for WordPress.
+Requires at least: 5.6
+Tested up to: 6.4
+Requires PHP: 8.0
+Version: 1.1
+License: GNU General Public License v2 or later
+Text Domain: wp-devs-real
+Tags: one-column, custom-menu, custom-logo, featured-images, translation-ready, sports, team
+*/
+
+/* Import a modern font - add also in header.php for best practice */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap'); */
+
+/* ========== Theme variables (Real Madrid colors) ========== */
+:root{
+    /* Measurements */
+    --wpdevs-big-padding: 60px 0;
+    --wpdevs-mobile-padding: 20px 0;
+    --wpdevs-light-padding: 0 25px;
+    /* Real Madrid color palette */
+    --rm-white: #ffffff;
+    --rm-crest-gold: #d4af37;    /* gold accent */
+    --rm-deep-navy: #041e42;     /* deep navy/blue */
+    --rm-mid-gray: #7c7c7c;
+    --rm-light-gray: #f5f6f8;
+    --rm-stadium-gray: #e9eef6;
+    --rm-black: #000000;
+    --rm-accent-purple: #6b1d6a; /* optional purple accent (historic) */
+}
+
+/* ========== Normalization (keep as before) ========== */
+/* (Omitted here for brevity — keep your normalize.css content unchanged)
+   You can paste your original normalize block here if desired. */
+
+/* Basic reset & typography */
+*,
+::after,
+::before { box-sizing: border-box; }
+
+body{
+    font-family: 'Montserrat', 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--rm-deep-navy);
+    background: var(--rm-white);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Headings */
+h1{ font-size: 56px; line-height: 1.05; margin: 0 0 15px; font-weight:800; color:var(--rm-deep-navy); }
+h2{ font-size: 32px; text-transform:uppercase; letter-spacing:1px; color:var(--rm-deep-navy); }
+h3{ font-size: 24px; color:var(--rm-deep-navy); }
+p { color: #333; font-size: 15px; }
+
+/* Links */
+a{ color: var(--rm-deep-navy); text-decoration: none; }
+a:hover{ color: var(--rm-crest-gold); }
+
+/* Images */
+img{ max-width:100%; height:auto; display:block; }
+
+/* Containers (responsive grid containers preserved) */
+.container { width: 100%; margin: 0 auto; padding: 0 15px; }
+@media (min-width:576px){ .container{ max-width:540px; } }
+@media (min-width:768px){ .container{ max-width:720px; } }
+@media (min-width:992px){ .container{ max-width:960px; } }
+@media (min-width:1200px){ .container{ max-width:1140px; } }
+
+/* ========== Top Bar (crest + contact + socials) ========== */
+.top-bar{
+    background: linear-gradient(90deg, var(--rm-white), rgba(255,255,255,0.95));
+    color: var(--rm-deep-navy);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rm-stadium-gray);
+}
+.top-bar .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 10px;
+}
+.top-bar .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.top-bar .brand img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+.top-bar .top-contact{ font-size:14px; color:var(--rm-mid-gray); }
+
+/* ========== Main Menu (nav bar) ========== */
+.menu-area{ background: var(--rm-white); border-bottom: 2px solid var(--rm-stadium-gray); }
+.main-menu{ height:64px; display:flex; align-items:center; justify-content:center; }
+.main-menu ul{ margin:0; padding-left:0; list-style:none; }
+.main-menu ul li{ display:inline-block; line-height:64px; position:relative; margin:0 6px; }
+.main-menu ul li a{
+    color:var(--rm-deep-navy);
+    padding: 0 18px;
+    font-weight:600;
+    display:block;
+}
+.main-menu ul li a:hover,
+.main-menu ul li.current_page_item > a{ color: var(--rm-crest-gold); }
+.main-menu li.menu-item-has-children::after{
+    content:"";
+    border-top:6px solid transparent;
+    border-right:6px solid transparent;
+    border-bottom:6px solid var(--rm-deep-navy);
+    border-left:6px solid transparent;
+    position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+}
+.main-menu ul.sub-menu{
+    position:absolute;
+    background:var(--rm-white);
+    border:1px solid var(--rm-stadium-gray);
+    display:none;
+    padding:8px 0;
+    min-width:180px;
+    z-index:20;
+}
+.main-menu ul .menu-item-has-children:hover > ul{ display:block; }
+.main-menu ul.sub-menu li{ display:block; }
+.main-menu ul.sub-menu a{ color:var(--rm-deep-navy); padding:8px 18px; }
+
+/* Mobile menu toggle */
+.menu-icon, .check-button{ cursor:pointer; display:none; }
+.menu-icon .bar1, .menu-icon .bar2, .menu-icon .bar3{ width:28px; height:3px; background:#333; margin:5px 0; transition:0.4s; }
+@media (max-width:767px){
+    .menu-icon, .check-button{ display:block; }
+    .main-menu ul{ position:absolute; width:100%; left:-999px; top:64px; background:var(--rm-deep-navy); transition:left .35s ease; padding: 15px 20px; }
+    .main-menu ul.show-dropdown{ left:0; }
+    .main-menu ul li{ display:block; margin:8px 0; line-height:1.6; }
+    .main-menu ul li a{ color:var(--rm-white); padding:8px 10px; }
+}
+
+/* ========== Hero (stadium / player background) ========== */
+.hero{
+    background-size:cover;
+    background-position:center center;
+    color:var(--rm-white);
+    text-align:center;
+    position:relative;
+}
+.hero .hero-items{
+    padding:80px 20px;
+}
+.hero .overlay{
+    background: linear-gradient(180deg, rgba(4,30,66,0.75), rgba(4,30,66,0.4));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 0;
+    flex-direction:column;
+}
+.hero h1{ color:var(--rm-white); font-weight:800; font-size:48px; margin:0; text-shadow:0 2px 6px rgba(0,0,0,0.45); }
+.hero p.lead{ color: rgba(255,255,255,0.9); font-size:18px; max-width:900px; margin:15px auto 0; }
+.hero .cta{
+    margin-top:20px;
+    background: var(--rm-crest-gold);
+    color: var(--rm-deep-navy);
+    padding:12px 22px;
+    display:inline-block;
+    border-radius:8px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+.hero .cta:hover{ background: var(--rm-white); color: var(--rm-deep-navy); }
+
+/* ========== Services / Features (e.g., squad, fixtures, shop) ========== */
+.services{ background: var(--rm-light-gray); padding: var(--wpdevs-big-padding); color:var(--rm-deep-navy); }
+.services .container{ display:flex; gap:24px; flex-wrap:wrap; }
+.services .service-card{
+    background:var(--rm-white);
+    border-radius:8px;
+    padding:18px;
+    box-shadow:0 6px 18px rgba(6,20,40,0.06);
+    flex: 1 1 280px;
+    text-align:center;
+}
+.services .service-card h4{ margin:10px 0 6px; font-size:18px; }
+.services .service-card p{ font-size:14px; color:#444; }
+
+/* ========== Home Blog / News ========== */
+.home-blog{ padding: var(--wpdevs-big-padding); }
+.home-blog h2{ text-align:center; position:relative; margin-bottom:40px; }
+.home-blog h2::after{
+    content:''; position:absolute; width:50px; height:4px; background:var(--rm-crest-gold); left:50%; transform:translateX(-50%); bottom:-12px;
+}
+.home-blog .latest-news article{ margin-bottom:28px; background:var(--rm-white); padding:18px; border-radius:6px; box-shadow:0 6px 12px rgba(0,0,0,0.04); }
+
+/* ========== Squad / Player cards (new) ========== */
+.squad-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:18px; }
+.player-card{
+    background: linear-gradient(180deg,var(--rm-white), #fafafa);
+    border-left: 4px solid var(--rm-crest-gold);
+    padding:14px;
+    border-radius:8px;
+    text-align:center;
+}
+.player-card img{ width:100%; height:220px; object-fit:cover; border-radius:6px; }
+.player-card h4{ margin:8px 0 4px; font-weight:700; }
+.player-card span{ color:var(--rm-mid-gray); display:block; font-size:14px; }
+
+/* ========== Fixtures / table (new) ========== */
+.fixtures{ padding:30px 0; background:var(--rm-white); }
+.fixture-item{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 16px; border-bottom:1px solid var(--rm-stadium-gray);
+}
+.fixture-item .date{ color:var(--rm-mid-gray); }
+.fixture-item .versus{ font-weight:700; }
+
+/* ========== Footer (dark navy) ========== */
+footer{ background: var(--rm-deep-navy); color: var(--rm-white); padding:20px 0; }
+footer .container{ display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+.footer-menu ul{ list-style:none; padding:0; margin:0; display:flex; gap:12px; }
+.footer-menu a{ color:rgba(255,255,255,0.9); text-decoration:none; font-weight:600; }
+.footer-credits{ color: rgba(255,255,255,0.7); font-size:14px; }
+
+/* ========== Forms / Comments / Search ========== */
+input[type="text"], input[type="email"], textarea, .searchform input[type="text"]{
+    width:100%; padding:10px; border:1px solid #dcdfe8; border-radius:6px; background:#fff;
+}
+input[type="submit"], #commentform input[type="submit"], .contact-form input[type="submit"]{
+    background: var(--rm-deep-navy);
+    color: var(--rm-white);
+    padding:10px 18px; border:none; border-radius:6px; cursor:pointer; font-weight:700;
+}
+input[type="submit"]:hover{ background:var(--rm-crest-gold); color:var(--rm-deep-navy); }
+
+/* ========== Slider / Gallery tweaks ========== */
+.wpdevs-slider{ position:relative; width:100%; overflow:hidden; max-height:520px; background:#000; }
+.wpdevs-slider .slides img{ width:100%; display:none; }
+.wpdevs-slider .slides img.active{ display:block; }
+
+/* ========== Small helpers ========== */
+.text-center{ text-align:center; }
+.btn-outline{ border:2px solid var(--rm-crest-gold); color:var(--rm-crest-gold); padding:8px 14px; display:inline-block; border-radius:6px; }
+.card{ background:var(--rm-white); padding:16px; border-radius:8px; box-shadow:0 10px 30px rgba(6,20,40,0.06); }
+
+/* Accessibility focus */
+a:focus, button:focus, input:focus { outline:3px solid rgba(212,175,55,0.15); outline-offset:2px; }
+
+/* Responsive tweaks */
+@media (max-width:768px){
+    h1{ font-size:34px; }
+    h2{ font-size:22px; }
+    .top-bar .brand img{ width:40px; height:40px; }
+    .hero .hero-items{ padding:40px 12px; }
+}
