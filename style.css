@@ -256,3 +256,195 @@ a:focus, button:focus, input:focus { outline:3px solid rgba(212,175,55,0.15); ou
     .top-bar .brand img{ width:40px; height:40px; }
     .hero .hero-items{ padding:40px 12px; }
 }
+
+/* === Real Madrid Comments Style === */
+.realmadrid-comments {
+  background: #ffffff;
+  border: 2px solid #e5c100;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.realmadrid-comments .comments-title {
+  color: #003399;
+  border-bottom: 2px solid #e5c100;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.comment-list li {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.comment-author img {
+  border-radius: 50%;
+  border: 2px solid #e5c100;
+}
+
+.comment-meta a {
+  color: #003399;
+  font-weight: 600;
+}
+
+.realmadrid-comment-form {
+  margin-top: 30px;
+  background: #f8f8ff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.realmadrid-btn {
+  background-color: #003399;
+  color: #fff !important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.realmadrid-btn:hover {
+  background-color: #e5c100;
+  color: #003399 !important;
+  transform: scale(1.05);
+}
+
+.no-comments {
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* === Real Madrid Home Page === */
+#realmadrid-slider {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
+
+#realmadrid-slider .slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-controls .prev,
+.slider-controls .next {
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  padding: 12px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.slider-controls .prev:hover,
+.slider-controls .next:hover {
+  background-color: #003399;
+}
+
+.realmadrid-dots {
+  text-align: center;
+  margin: 10px 0 40px;
+}
+
+.realmadrid-dots .dot {
+  height: 12px;
+  width: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.realmadrid-squad, .realmadrid-achievements, .realmadrid-news {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.realmadrid-squad h2,
+.realmadrid-achievements h2,
+.realmadrid-news h2 {
+  color: #003399;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.squad-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.squad-gallery .player {
+  text-align: center;
+}
+
+.squad-gallery img {
+  width: 200px;
+  border-radius: 10px;
+  border: 3px solid #e5c100;
+}
+
+.trophies {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.trophies li {
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+.realmadrid-news .news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.rm-news-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.rm-news-container {
+    display: flex;
+}
+
+.rm-news-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.rm-prev, .rm-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.rm-prev { left: 10px; }
+.rm-next { right: 10px; }

@@ -135,3 +135,12 @@ if ( ! function_exists( 'wp_body_open' ) ){
         do_action( 'wp_body_open' );
     }
 }
+
+
+function wpdevs_real_madrid_scripts() {
+    if( is_page_template('template-real-madrid-news.php') ){ // Vetëm në template-in e lajmeve
+        wp_enqueue_script( 'rm-news', get_template_directory_uri() . '/js/real-madrid-news.js', array(), '1.0', true );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'wpdevs_real_madrid_scripts' );
+
