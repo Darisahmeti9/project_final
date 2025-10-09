@@ -448,3 +448,197 @@ a:focus, button:focus, input:focus { outline:3px solid rgba(212,175,55,0.15); ou
 
 .rm-prev { left: 10px; }
 .rm-next { right: 10px; }
+
+.news-card {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.news-card:hover {
+  transform: translateY(-4px);
+}
+
+.news-thumb img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 15px;
+}
+
+.news-title a {
+  color: #003399;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.news-title a:hover {
+  text-decoration: underline;
+}
+
+.meta-info {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+@media (max-width:768px){
+  .squad-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .squad-gallery .player img {
+    width: 150px;
+  }
+}
+@media (max-width:576px){
+  #realmadrid-slider .slide img {
+    height: 300px;
+  }
+}
+@media (max-width:480px){
+  .news-card {
+    flex-direction: column;
+  }
+  .news-thumb img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.real-madrid-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  text-align: center;
+  background: #fff;
+}
+
+.slide-img img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.slide-content {
+  padding: 20px;
+}
+
+.slide-content h2 a {
+  color: #003399;
+  text-decoration: none;
+}
+
+.slide-content h2 a:hover {
+  text-decoration: underline;
+}
+
+.slide-date {
+  color: #777;
+  font-size: 14px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0073e6;
+  font-weight: bold;
+  text-decoration: none;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Shigjetat */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 12px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 22px;
+  border: none;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+/* Dots */
+.dots {
+  text-align: center;
+  margin: 15px 0;
+}
+.dots .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.dots .dot.active, .dots .dot:hover {
+  background: #003399;
+}
+/* === Real Madrid Single Post === */
+.single-post { padding: 60px 0; max-width: 800px; margin: 0 auto; }
+.single-post h1 { font-size: 36px; color: #003399; margin-bottom: 10px; }
+.post-meta { color: #777; font-size: 14px; margin-bottom: 30px; }  
+.post-meta a { color: #003399; text-decoration: none; }
+.post-meta a:hover { text-decoration: underline; }
+.post-content { line-height: 1.8; color: #333; }
+.post-content img { max-width: 100%; border-radius: 8px; margin:
+  20px 0;
+  }
+.post-content h2, .post-content h3 { color: #003399; margin-top: 30px; }
+.post-content a { color: #0073e6; text-decoration: none; }
+.post-content a:hover { text-decoration: underline; }
+.post-tags { margin-top: 30px; }
+.post-tags a { display: inline-block; background: #f0f0f0; color: #003399; padding: 6px 12px; border-radius: 20px; margin-right: 8px; text-decoration: none; font-size: 14px; }
+.post-tags a:hover { background: #003399; color: #fff; }
+.comments-section { margin-top: 50px; }
+.comments-section h2 { color: #003399; margin-bottom: 20px; }
+.comments-list { list-style: none; padding: 0; }
+.comments-list li { border-bottom: 1px solid #e5e5e5;
+  padding: 15px 0;
+}

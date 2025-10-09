@@ -72,3 +72,26 @@ function autoScroll(){
 // Initialize
 setupSlider();
 setInterval(autoScroll, autoScroll_interval);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.querySelector('.slider-container');
+  const slides = document.querySelectorAll('.slide');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  let index = 0;
+
+  function showSlide(n) {
+    if (n < 0) index = slides.length - 1;
+    else if (n >= slides.length) index = 0;
+    else index = n;
+
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prev.addEventListener('click', () => showSlide(index - 1));
+  next.addEventListener('click', () => showSlide(index + 1));
+
+  // Auto scroll çdo 5 sekonda
+  setInterval(() => showSlide(index + 1), 5000);
+});
+// Fund i JS për dropdown & slider

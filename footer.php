@@ -1,7 +1,7 @@
 <footer class="site-footer realmadrid-footer">
     <div class="container footer-container">
         <div class="footer-logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/realmadrid-logo.png" alt="Real Madrid Logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/Real_Madrid_CF.jpg" alt="Real Madrid Logo">
         </div>
 
         <div class="footer-menu">
@@ -23,3 +23,4 @@
 <?php wp_footer(); ?>
 </body>
 </html>
+
