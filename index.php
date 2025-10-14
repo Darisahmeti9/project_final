@@ -41,18 +41,6 @@
                 <?php get_sidebar(); ?>
             </div>
 
-            <!-- Slider for featured matches / players -->
-            <div class="wpdevs-slider realmadrid-slider">
-                <div class="slides">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/slide1.jpg" alt="Real Madrid Squad" class="active">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/slide2.jpg" alt="Champions League Glory">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/slide3.jpg" alt="Santiago Bernabéu Stadium">
-                </div>
-                <div class="slider-controls">
-                    <span class="prev">❮</span>
-                    <span class="next">❯</span>
-                </div>
-            </div>
 
         </main>
     </div>

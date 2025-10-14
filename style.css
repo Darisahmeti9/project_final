@@ -642,3 +642,18 @@ a:focus, button:focus, input:focus { outline:3px solid rgba(212,175,55,0.15); ou
 .comments-list li { border-bottom: 1px solid #e5e5e5;
   padding: 15px 0;
 }
+
+/* Footer Real Madrid Logo */
+.realmadrid-footer .footer-logo img {
+  width: 120px;      /* Madhësia e logos (mund ta ndryshosh p.sh. 80px ose 150px) */
+  height: auto;      /* Ruaj përmasat natyrale */
+  display: block;    /* Që logoja të mos ketë boshllëqe rreth */
+  margin: 0 auto;    /* Qendro logoja në mes */
+  border-radius: 8px; /* Opsionale – pak rrumbullakim qoshet */
+}
+.realmadrid-footer {
+  background: var(--rm-deep-navy);
+  color: var(--rm-white);
+  padding: 30px 0;
+  text-align: center;
+}
